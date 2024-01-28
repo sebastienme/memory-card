@@ -4,8 +4,9 @@ import { shuffle } from 'fast-shuffle'
 
 export const Gifs = () => {
     const [gifs, setGifs] = useState([{title:'', img:''}])
-    const [score, setScore] = useState(0);
-    const [bestScore, setBestScore] = useState(0);
+    const [userPick, setUserPick] = useState(null)
+    const [score, setScore] = useState(0)
+    const [bestScore, setBestScore] = useState(0)
     
     useEffect(() => {
         const fetchGifs = async () => {
@@ -19,8 +20,16 @@ export const Gifs = () => {
         fetchGifs();
     }, [])
 
-    const handleClick = () => {
-        console.log('hello')
+    const handleClick = (cardId) => {
+        setUserPick(cardId)
+        if (userPick === cardId) {
+            setScore(0)
+            if (score > bestScore) {
+                setBestScore(score)
+            }
+        } else {
+            setScore(score +1)
+        }
     }
     
 
@@ -39,7 +48,7 @@ export const Gifs = () => {
                 {shuffle(gifs.map((item) => (
                 <Card 
                     key={item.title}
-                    handleClick={handleClick}
+                    handleClick={() => handleClick(item.title)}
                 >
                     <img src={item.img} alt="" />
                     <div>{item.title}</div>

@@ -1,9 +1,31 @@
-# React + Vite
+# Memory Card MEME game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A game of memomry with MEME
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# memory-card
+## Getting Started
+
+
+### Prerequisites
+
+List any prerequisites or dependencies that need to be installed before running the application.
+
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/sebastienme/memory-card.git
+   cd memory-card
+   npm install
+   npm run build
+
+2. Running Locally
+
+   ```bash
+   npm run dev
+
+3. Visit http://localhost:3000 in your browser.

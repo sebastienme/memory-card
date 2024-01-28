@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Card } from './Utilities'
+import { shuffle } from 'fast-shuffle'
 
 export const Gifs = () => {
     const [gifs, setGifs] = useState([{title:'', img:''}])
+    const [score, setScore] = useState(0);
+    const [bestScore, setBestScore] = useState(0);
     
     useEffect(() => {
         const fetchGifs = async () => {
@@ -16,14 +19,34 @@ export const Gifs = () => {
         fetchGifs();
     }, [])
 
+    const handleClick = () => {
+        console.log('hello')
+    }
+    
+
     return (
         <>
-            {gifs.map((item) => (
-                <Card key={item.title}>
+            <div className='header'>
+                <div className='header__title'>Jeu de mémoire de pays</div>
+                <div className='header__scores'>
+                <div className='header__scores__score'>Score:<span>{score}</span></div>
+                <div className='header__scores__best-score'>Meilleur score:<span>{bestScore}</span></div>
+                </div>
+            </div>
+            <div className='main'>
+                <div className='main__title'>Gagnez des points en cliquant sur une image mais ne cliquez pas plus d'une fois !</div>
+                <div className='main__game'>
+                {shuffle(gifs.map((item) => (
+                <Card 
+                    key={item.title}
+                    handleClick={handleClick}
+                >
                     <img src={item.img} alt="" />
                     <div>{item.title}</div>
                 </Card>
-            ))}
+            )))}
+                </div>
+            </div>
         </>
     )
 } 

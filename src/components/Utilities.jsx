@@ -1,7 +1,7 @@
 
-export const Card = ({children}) => {
+export const Card = ({children, handleClick}) => {
     return (
-        <div className="card">{children}</div>
+        <div className="card" onClick={handleClick}>{children}</div>
     )
 }
 

@@ -82,6 +82,14 @@ a {
     color: inherit;
 }
 
+.header__scores__score span {
+    color: var(--yellow-color);
+}
+
+.header__scores__best-score span {
+    color: var(--yellow-color);
+}
+
 .main__game {
     display: flex;
     flex-wrap: wrap;
@@ -100,6 +108,7 @@ a {
     font-size: 23px;
     margin: 10px;
     gap: 8%;
+    cursor: pointer;
 }
 
 .card img {

@@ -82,12 +82,32 @@ a {
     color: inherit;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+}
+
+.header__title {
+    font-size: var(--jumbo-text);
+    font-weight: 700;
+}
+
+.header__scores__score, .header__scores__best-score {
+    font-size: var(--h5-text);
+} 
+
 .header__scores__score span {
     color: var(--yellow-color);
 }
 
 .header__scores__best-score span {
     color: var(--yellow-color);
+}
+
+.main__title {
+    margin: 25px;
+    font-size: var(--h5-text);
 }
 
 .main__game {

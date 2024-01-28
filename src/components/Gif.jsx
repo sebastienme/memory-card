@@ -36,7 +36,7 @@ export const Gifs = () => {
     return (
         <>
             <div className='header'>
-                <div className='header__title'>Jeu de mémoire de pays</div>
+                <div className='header__title'>Jeu de mémoire de MEME</div>
                 <div className='header__scores'>
                 <div className='header__scores__score'>Score:<span>{score}</span></div>
                 <div className='header__scores__best-score'>Meilleur score:<span>{bestScore}</span></div>
